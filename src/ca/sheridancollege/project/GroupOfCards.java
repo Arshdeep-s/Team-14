@@ -15,28 +15,27 @@ import java.util.Collections;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
-public class GroupOfCards {
+public class GroupOfCards extends Card {
 
-    //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
     private int size;//the size of the grouping
 
-    public GroupOfCards(int size) {
-        this.size = size;
+    public GroupOfCards() {
+        this.size = size + 1;
     }
 
+   
     /**
      * A method that will get the group of cards as an ArrayList
      *
      * @return the group of cards.
      */
-    public ArrayList<Card> getCards() {
-        return cards;
+    public String getRandomSuit() {
+        String[] cards = {"Hearts", "Clubs", "Spades", "Diamonds"};
+        int ran = (int) (Math.random() * 4);
+        String suit = cards[ran];
+        return suit;
     }
 
-    public void shuffle() {
-        Collections.shuffle(cards);
-    }
 
     /**
      * @return the size of the group of cards
@@ -51,5 +50,12 @@ public class GroupOfCards {
     public void setSize(int size) {
         this.size = size;
     }
+    
+    @Override
+    public String toString() {
+        return null;
+        
+    }
 
-}//end class
+
+}
